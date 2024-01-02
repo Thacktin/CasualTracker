@@ -1,0 +1,15 @@
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\bin\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.deps.json
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\bin\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.dll
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\bin\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.pdb
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\bin\Debug\net8.0-windows10.0.19041.0\CasualTracker.Persistence.dll
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\bin\Debug\net8.0-windows10.0.19041.0\CasualTracker.Persistence.pdb
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.csproj.AssemblyReference.cache
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.AssemblyInfoInputs.cache
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.AssemblyInfo.cs
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.csproj.CoreCompileInputs.cache
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.csproj.CopyComplete
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.dll
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\refint\CasualTracker.Model.dll
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\CasualTracker.Model.pdb
+E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\obj\Debug\net8.0-windows10.0.19041.0\ref\CasualTracker.Model.dll
