@@ -2,43 +2,51 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CasualTracker.Views.AddShiftPage"
-             Title="AddShiftPage">
+             Title="AddShiftPage"
+             BindingContext="{Binding NewShift}">
     <ScrollView>
         <VerticalStackLayout Padding="20"
                              Spacing="10"
                              VerticalOptions="StartAndExpand">
-
             <Label 
             Text="Műszak hozzáadása"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
             <Label
             Text="Dátum"/>
+
             <DatePicker
                 x:Name="dateLbl"
+                Date="{Binding SelectedDate}"
              />
             <Label
             Text="Műszak kezdete"/>
-            <TimePicker x:Name="startLbl"/>
+            <TimePicker x:Name="startLbl" Time="{Binding StartDate}"/>
             <Label
             Text="Műszak vége"/>
-            <TimePicker x:Name="endLbl" />
+            <TimePicker x:Name="endLbl" Time="{Binding EndDate}"/>
             <Label Text="Munkahely"/>
-            <Picker x:Name="workplacePicker"
-                    Title="Workplace"/>
+            <Picker
+                Title="Workplace"
+                ItemsSource="{Binding Workplaces}"
+                ItemDisplayBinding="{Binding Name}"
+                SelectedItem="{Binding SelectedItem}"
+                />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="returnBtn" Grid.Column="0" Text="Cancel"  Clicked="returnBtn_Clicked"/>
-                <Button x:Name="addBtn" Grid.Column="1" Text="Add shift" Clicked="addBtn_Clicked"/>
+                <Button  Grid.Column="0" Text="Cancel"  Command="{Binding ReturnCommand}"/>
+                <Button  Grid.Column="1" Text="Add shift" Command="{Binding AddShiftCommand}" CommandParameter="{Binding}" />
             </Grid>
-
             <Button
+     Text="Add new workplace"
+     Command="{Binding AddWorkplacePageCommand}" CommandParameter="{Binding}"/>
+            <!--<Button
                 Text="Add workplace"
-                Clicked="workplaceBtn_Clicked"/>
-           
+                Clicked="workplaceBtn_Clicked"/>-->
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

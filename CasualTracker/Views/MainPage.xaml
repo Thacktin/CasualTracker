@@ -55,9 +55,8 @@
             </Grid>
 
             <Button
-                Clicked="addShiftBtn_Clicked"
                 Text="Add new shift"
-                Command="{Binding AddShiftCommand}"/>
+                Command="{Binding AddShiftPageCommand}" CommandParameter="{Binding}"/>
 
             <!--<local:WeekView/>-->
         </VerticalStackLayout>

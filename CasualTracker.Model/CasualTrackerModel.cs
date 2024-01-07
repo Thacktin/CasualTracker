@@ -16,14 +16,16 @@ namespace CasualTracker.Model
 
         public Shift selectedShift;
 
-        //public event EventHandler? ShiftSelected;
+        public event EventHandler? ShiftAdded;
+        public event EventHandler? WorkplaceAdded;
         //public event EventHandler? ReturnPreviousPage;
-        public event EventHandler? LoadWorkplacePage;
+        //public event EventHandler? LoadWorkplacePage;
         public event EventHandler? ShiftsLoaded;
         //public event EventHandler? SwipedToGoBack;
         public CasualTrackerModel(ICasualTrackerPersistence persistence)
         {
             Persistence = persistence;
+            
             //LoadData();
         }
 
@@ -48,10 +50,7 @@ namespace CasualTracker.Model
             return Persistence.GetAllShifts();
         }
 
-        public void AddShift(Shift shift)
-        {
-            Persistence.AddShift(shift);
-        }
+
 
         public void GetShiftByID(Shift? shift)
         {
@@ -69,34 +68,54 @@ namespace CasualTracker.Model
             return Persistence.GetAllShifts().Where(x=>x.Date >= DateOnly.FromDateTime(DateTime.Now)).OrderBy(x => x.Date).Take(10).ToList();
         }
 
-        public Workplace GetSelectedShiftWorkplace()
-        {
-            return Persistence.GetWorkplaceByShift(this.selectedShift);
-        }
+        //public Workplace GetSelectedShiftWorkplace()
+        //{
+        //    return Persistence.GetWorkplaceByShift(this.selectedShift);
+        //}
 
         public List<Workplace> GetWorkplaces()
         {
             return Persistence.GetAllWorkplaces().ToList();
         }
 
-        public void GetWorkplacePage()
-        {
-            LoadWorkplacePage.Invoke(this, EventArgs.Empty);
-        }
+        //public void GetWorkplacePage()
+        //{
+        //    LoadWorkplacePage.Invoke(this, EventArgs.Empty);
+        //}
 
-        public void AddWorkplace(Workplace workplace)
+        public void AddWorkplace(string name, string adress)
         {
+            Workplace workplace = new Workplace()
+            {
+                Name = name,
+                Adress = adress,
+            };
             Persistence.AddWorkplace(workplace);
+            WorkplaceAdded?.Invoke(this, EventArgs.Empty);
         }
 
         public void LoadShifts()
         {
-            ShiftsLoaded.Invoke(this, EventArgs.Empty);
+            ShiftsLoaded?.Invoke(this, EventArgs.Empty);
         }
 
         public Workplace GetWorkplaceForShift(Shift shift)
         {
             return Persistence.GetWorkplaceByShift(shift);
+        }
+
+        public void AddShift(DateTime selectedDate, TimeSpan startDate, TimeSpan endDate, Workplace selectedItem)
+        {
+            Shift shift = new Shift()
+            {
+                Date = DateOnly.FromDateTime(selectedDate),
+                StartTime = TimeOnly.FromTimeSpan(startDate),
+                EndTime = TimeOnly.FromTimeSpan(endDate),
+                WorkplaceId = selectedItem.ID
+            };
+            Persistence.AddShift(shift);
+            ShiftAdded?.Invoke(this, EventArgs.Empty);
+
         }
 
         //public async Task GetShiftAsync(int iD)

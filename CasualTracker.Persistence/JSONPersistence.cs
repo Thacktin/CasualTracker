@@ -21,6 +21,8 @@ namespace CasualTracker.Persistence
         {
             WorkplacesFileName = workplacesFileName;
             ShiftsFileName = shiftsfileName;
+            //Reset "Database"
+            //SaveFiles();
             LoadFiles();
         }
 
@@ -38,6 +40,8 @@ namespace CasualTracker.Persistence
                 shifts = JsonConvert.DeserializeObject<List<Shift>>(File.ReadAllText(shiftsFile));
             }
 
+            if (workplaces == null) workplaces = new();
+            if (shifts == null) shifts = new();
         }
 
        public async void SaveFiles()
@@ -53,13 +57,28 @@ namespace CasualTracker.Persistence
 
         public void AddShift(Shift shift)
         {
-            shift.ID = shifts.Max(x => x.ID) + 1;
+            if (shifts.Count > 0)
+            {
+                shift.ID = shifts.Max(x => x.ID) + 1;
+            }
+            else
+            {
+                shift.ID = 0;
+            }
             this.shifts.Add(shift);
         }
 
         public void AddWorkplace(Workplace workplace)
         {
-            workplace.ID = workplaces.Max(x=> x.ID) + 1;
+            if (workplaces.Count >0)
+            {
+                workplace.ID = workplaces.Max(x => x.ID) + 1;
+            }
+            else
+            {
+                workplace.ID = 0;
+            }
+
             this.workplaces.Add(workplace);
         }
 
@@ -75,7 +94,7 @@ namespace CasualTracker.Persistence
 
         public Workplace GetWorkplaceByShift(Shift selectedShift)
         {
-            return workplaces.FirstOrDefault(x => x.ID == selectedShift.ID);
+            return workplaces.FirstOrDefault(x => x.ID == selectedShift.WorkplaceId,null);
         }
     }
 }

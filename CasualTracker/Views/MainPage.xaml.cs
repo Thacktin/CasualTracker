@@ -73,10 +73,10 @@ namespace CasualTracker
         //    Model.SaveData();
         //}
 
-        private async void addShiftBtn_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AddShiftPage(Model));
-        }
+        //private async void addShiftBtn_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new AddShiftPage(Model));
+        //}
 
     }
 
