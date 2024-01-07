@@ -17,5 +17,6 @@ namespace CasualTracker.Persistence
         public Workplace GetWorkplaceByShift(Shift selectedShift);
 
         public void SaveFiles();
+        public void LoadFiles();
     }
 }

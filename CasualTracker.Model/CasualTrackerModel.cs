@@ -40,6 +40,12 @@ namespace CasualTracker.Model
             Persistence.SaveFiles();
         }
 
+        public void LoadData()
+        {
+            Persistence.LoadFiles();
+            ShiftsLoaded?.Invoke(this, EventArgs.Empty);
+        }
+
         //public bool CheckLoggedIn()
         //{
         //    return GetCurrentUser().Result == null;

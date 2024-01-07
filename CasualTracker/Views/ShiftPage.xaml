@@ -94,6 +94,7 @@
                     Text="{Binding Adress}"/>
                 </Grid>
                 <Button Text="Return" Command="{Binding ReturnCommand}"/>
+                <Button Text="Edit" Command="{Binding EditShiftCommand}" CommandParameter="{Binding}"/>
             </StackLayout>
 
         </ScrollView>

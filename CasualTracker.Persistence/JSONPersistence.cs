@@ -23,10 +23,10 @@ namespace CasualTracker.Persistence
             ShiftsFileName = shiftsfileName;
             //Reset "Database"
             //SaveFiles();
-            LoadFiles();
+            //LoadFiles();
         }
 
-        private void LoadFiles()
+        public void LoadFiles()
         {
             string workplaceFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), WorkplacesFileName);
             if (File.Exists(workplaceFile))

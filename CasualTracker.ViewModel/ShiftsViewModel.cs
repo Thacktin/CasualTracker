@@ -17,8 +17,9 @@ namespace CasualTracker.ViewModel
         public string WorkplaceName { get; set; }
         public DelegateCommand SelectCommand { get; set; }
         public DelegateCommand ReturnCommand { get; set; }
+        public DelegateCommand EditShiftCommand { get; set; }
 
-        public ShiftsViewModel(Shift shift,Workplace workplace ,DelegateCommand selectCommand, DelegateCommand returnCommand)
+        public ShiftsViewModel(Shift shift,Workplace workplace ,DelegateCommand selectCommand, DelegateCommand returnCommand, DelegateCommand editShiftCommand)
         {
             ID = shift.ID;
             Date = shift.Date;
@@ -28,6 +29,7 @@ namespace CasualTracker.ViewModel
             WorkplaceName = workplace.Name;
             SelectCommand = selectCommand;
             ReturnCommand = returnCommand;
+            EditShiftCommand = editShiftCommand;
 
         }
 

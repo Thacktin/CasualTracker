@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CasualTracker.Services;
+using Microsoft.Extensions.Logging;
 
 namespace CasualTracker
 {
@@ -14,9 +15,9 @@ namespace CasualTracker
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
+            builder.Services.AddSingleton<IAlertService, AlertService>();
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

@@ -18,11 +18,11 @@
             <Label
                 Text="Next shifts:"/>
             <Grid >
-                <StackLayout x:Name="ShiftsList"
+                <!--<StackLayout x:Name="ShiftsList"
                              Padding="10">
-                 
                     
-                </StackLayout>
+                </StackLayout>-->
+                
                 <ListView x:Name="shiftsList" ItemsSource="{Binding Shifts}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -43,12 +43,11 @@
               VerticalOptions="End" />
                                 </Grid>
                             </ViewCell>-->
+                            <TextCell Command="{Binding SelectCommand}" CommandParameter="{Binding}" Text="{Binding Date}" Detail="{Binding StartDate}">
+
+                            </TextCell>
                             <!--<TextCell Command="{Binding SelectCommand}" CommandParameter="{Binding}" Text="{Binding Date}" Detail="{Binding StartDate}">
-
                             </TextCell>-->
-                                <TextCell Command="{Binding SelectCommand}" CommandParameter="{Binding}" Text="{Binding Date}" Detail="{Binding StartDate}">
-
-                                </TextCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
