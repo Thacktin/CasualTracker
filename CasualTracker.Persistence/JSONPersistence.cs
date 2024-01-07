@@ -53,11 +53,13 @@ namespace CasualTracker.Persistence
 
         public void AddShift(Shift shift)
         {
+            shift.ID = shifts.Max(x => x.ID) + 1;
             this.shifts.Add(shift);
         }
 
         public void AddWorkplace(Workplace workplace)
         {
+            workplace.ID = workplaces.Max(x=> x.ID) + 1;
             this.workplaces.Add(workplace);
         }
 

@@ -8,7 +8,7 @@ namespace CasualTracker
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        ////int count = 0;
         CasualTrackerModel Model;
         public MainPage(CasualTrackerModel model)
         {
@@ -40,32 +40,32 @@ namespace CasualTracker
             //}
 
         }
-        protected override void OnNavigatedTo(NavigatedToEventArgs args)
-        {
-            base.OnNavigatedTo(args);
-            ShiftsList.Clear();
-            foreach (Shift item in Model.GetUndoneShiftsOrderedByDate())
-            {
-                Button btn = new Button()
-                {
-                    Text = $"{item.Date.ToString()} {item.StartTime.ToString()}",
-                    BindingContext = item,
-                    Padding = 5,
-                    BackgroundColor = Color.FromHex("42f54e"),
-                };
-                btn.Clicked += Btn_Clicked;
-                ShiftsList.Children.Add(btn);
+        //protected override void OnNavigatedTo(NavigatedToEventArgs args)
+        //{
+        //    base.OnNavigatedTo(args);
+        //    ShiftsList.Clear();
+        //    foreach (Shift item in Model.GetUndoneShiftsOrderedByDate())
+        //    {
+        //        Button btn = new Button()
+        //        {
+        //            Text = $"{item.Date.ToString()} {item.StartTime.ToString()}",
+        //            BindingContext = item,
+        //            Padding = 5,
+        //            BackgroundColor = Color.FromHex("42f54e"),
+        //        };
+        //        btn.Clicked += Btn_Clicked;
+        //        ShiftsList.Children.Add(btn);
 
 
-            }
-        }
+        //    }
+        //}
 
-        private void Btn_Clicked(object? sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            Shift shift = button.BindingContext as Shift;
-            Model.GetShiftByID(shift);
-        }
+        //private void Btn_Clicked(object? sender, EventArgs e)
+        //{
+        //    Button button = (Button)sender;
+        //    Shift shift = button.BindingContext as Shift;
+        //    Model.GetShiftByID(shift);
+        //}
 
         //private void SaveBtn_Clicked(object sender, EventArgs e)
         //{

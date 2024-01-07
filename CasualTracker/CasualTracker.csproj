@@ -64,6 +64,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\CasualTracker.Model\CasualTracker.Model.csproj" />
+	  <ProjectReference Include="..\CasualTracker.ViewModel\CasualTracker.ViewModel.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

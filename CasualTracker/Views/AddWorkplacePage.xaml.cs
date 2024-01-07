@@ -16,7 +16,7 @@ public partial class AddWorkplacePage : ContentPage
 
     private void returnBtn_Clicked(object sender, EventArgs e)
     {
-		model.ReturnToPreviousPage();
+		//model.ReturnToPreviousPage();
     }
 
     private void addBtn_Clicked(object sender, EventArgs e)
@@ -36,6 +36,6 @@ public partial class AddWorkplacePage : ContentPage
         workplace.Name = nameEntry.Text;
         model.AddWorkplace(workplace);
         DisplayAlert("", "Workplace added", "OK");
-        model.ReturnToPreviousPage();
+        //model.ReturnToPreviousPage();
     }
 }

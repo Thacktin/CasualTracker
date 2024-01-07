@@ -26,7 +26,7 @@ public partial class AddShiftPage : ContentPage
     private void returnBtn_Clicked(object sender, EventArgs e)
     {
         //Navigation.PopToRootAsync();
-        model.ReturnToPreviousPage();
+        //model.ReturnToPreviousPage();
     }
 
     private void addBtn_Clicked(object sender, EventArgs e)
@@ -57,7 +57,7 @@ public partial class AddShiftPage : ContentPage
         model.AddShift(shift);
         DisplayAlert("", "Shift added", "OK");
         model.SaveData();
-        model.ReturnToPreviousPage();
+        //model.ReturnToPreviousPage();
 
     }
 

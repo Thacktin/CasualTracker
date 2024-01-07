@@ -1,4 +1,0 @@
-E:\Beadando\Mobil\CasualTracker\CasualTracker.Model\CasualTracker.Model.csproj;neutral
-E:\Beadando\Mobil\CasualTracker\CasualTracker.Persistence\CasualTracker.Persistence.csproj;neutral
-E:\Beadando\Mobil\CasualTracker\CasualTracker.Persistence\CasualTracker.Persistence.csproj;neutral
-E:\Beadando\Mobil\CasualTracker\CasualTracker\CasualTracker.csproj;x64

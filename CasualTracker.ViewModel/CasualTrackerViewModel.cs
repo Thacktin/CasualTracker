@@ -1,4 +1,5 @@
 ﻿using CasualTracker.Model;
+using CasualTracker.Persistence.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,13 +29,46 @@ namespace CasualTracker.ViewModel
                 }
             }
         }
+        private void Model_ShiftsLoaded(object? sender, EventArgs e)
+        {
+            foreach (var item in model.GetUndoneShiftsOrderedByDate())
+            {
+                Workplace workplace = model.GetWorkplaceForShift(item);
+                Shifts.Add(new ShiftsViewModel(item, workplace, new DelegateCommand(Command_Select), new DelegateCommand(Command_Return)));
+            }
 
-        public DelegateCommand SelectCommand { get; private set; }
+        }
+
+        public event EventHandler? ShiftSelected;
+        public event EventHandler? ShiftsLoaded;
+        public event EventHandler? ReturnRequested;
+        public event EventHandler? ShiftAddRequested;
+
 
         public CasualTrackerViewModel(CasualTrackerModel model)
         {
             this.model = model;
+            model.ShiftsLoaded += Model_ShiftsLoaded;
             SelectCommand = new DelegateCommand(Command_Select);
+            AddShiftCommand = new DelegateCommand(Command_AddShift);
+            ReturnCommand = new DelegateCommand(Command_Return);
+
+            this.model.LoadShifts();
+        }
+
+        #region Commands
+        public DelegateCommand SelectCommand { get; private set; }
+        public DelegateCommand AddShiftCommand { get; private set; }
+        public DelegateCommand ReturnCommand { get; private set; }
+
+        private void Command_Return(object? obj)
+        {
+            OnReturn();
+        }
+
+        private void Command_AddShift(object? obj)
+        {
+            OnShiftAdd();
         }
 
         private void Command_Select(object? param)
@@ -42,8 +76,13 @@ namespace CasualTracker.ViewModel
             if (param != null && param is ShiftsViewModel shift)
             {
                 SelectedShift = shift;
-                model.GetShiftAsync(shift.ID);
+                OnShiftSelected();
             }
         }
+        #endregion
+        private void OnShiftSelected() => ShiftSelected?.Invoke(this, EventArgs.Empty);
+        private void OnReturn() => ReturnRequested?.Invoke(this, EventArgs.Empty);
+
+        private void OnShiftAdd()=> ShiftAddRequested?.Invoke(this, EventArgs.Empty);
     }
 }

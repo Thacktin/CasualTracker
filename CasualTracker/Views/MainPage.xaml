@@ -26,7 +26,7 @@
                 <ListView x:Name="shiftsList" ItemsSource="{Binding Shifts}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <!--<ViewCell>
                                 <Grid Padding="10">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
@@ -42,18 +42,24 @@
               FontAttributes="Italic"
               VerticalOptions="End" />
                                 </Grid>
-                            </ViewCell>
+                            </ViewCell>-->
+                            <!--<TextCell Command="{Binding SelectCommand}" CommandParameter="{Binding}" Text="{Binding Date}" Detail="{Binding StartDate}">
+
+                            </TextCell>-->
+                                <TextCell Command="{Binding SelectCommand}" CommandParameter="{Binding}" Text="{Binding Date}" Detail="{Binding StartDate}">
+
+                                </TextCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
 
             <Button
-                x:Name="addShiftBtn"
                 Clicked="addShiftBtn_Clicked"
-                Text="Add new shift"/>
+                Text="Add new shift"
+                Command="{Binding AddShiftCommand}"/>
 
-            <local:WeekView/>
+            <!--<local:WeekView/>-->
         </VerticalStackLayout>
         
     </ScrollView>

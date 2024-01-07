@@ -16,9 +16,10 @@ namespace CasualTracker.Model
 
         public Shift selectedShift;
 
-        public event EventHandler? ShiftSelected;
-        public event EventHandler? ReturnPreviousPage;
+        //public event EventHandler? ShiftSelected;
+        //public event EventHandler? ReturnPreviousPage;
         public event EventHandler? LoadWorkplacePage;
+        public event EventHandler? ShiftsLoaded;
         //public event EventHandler? SwipedToGoBack;
         public CasualTrackerModel(ICasualTrackerPersistence persistence)
         {
@@ -55,13 +56,13 @@ namespace CasualTracker.Model
         public void GetShiftByID(Shift? shift)
         {
             this.selectedShift = shift;
-            ShiftSelected?.Invoke(this, EventArgs.Empty);
+            //ShiftSelected?.Invoke(this, EventArgs.Empty);
         }
 
-        public void ReturnToPreviousPage()
-        {
-            ReturnPreviousPage?.Invoke(this, EventArgs.Empty);
-        }
+        //public void ReturnToPreviousPage()
+        //{
+        //     ReturnPreviousPage?.Invoke(this, EventArgs.Empty);
+        //}
 
         public List<Shift> GetUndoneShiftsOrderedByDate()
         {
@@ -88,5 +89,21 @@ namespace CasualTracker.Model
             Persistence.AddWorkplace(workplace);
         }
 
+        public void LoadShifts()
+        {
+            ShiftsLoaded.Invoke(this, EventArgs.Empty);
+        }
+
+        public Workplace GetWorkplaceForShift(Shift shift)
+        {
+            return Persistence.GetWorkplaceByShift(shift);
+        }
+
+        //public async Task GetShiftAsync(int iD)
+        //{
+        //    List<Shift> shifts = Persistence.GetAllShifts();
+        //    selectedShift = shifts.FirstOrDefault(x=> x.ID == iD);
+        //    ShiftSelected?.Invoke(this, EventArgs.Empty);
+        //}
     }
 }
