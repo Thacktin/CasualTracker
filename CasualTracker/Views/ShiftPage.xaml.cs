@@ -11,6 +11,12 @@ public partial class ShiftPage : ContentPage
 		
 		InitializeComponent();
         Model = model;
+		this.BindingContext = model.selectedShift;
+    }
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        workplaceLbl.Text = Model.GetSelectedShiftWorkplace()?.Adress;
     }
 }

@@ -10,10 +10,12 @@ namespace CasualTracker.Persistence
 
     public interface ICasualTrackerPersistence
     {
-
-
-        public Task<User> GetAllUsers();
-        public Task<List<Shift>> GetAllShifts();
+        void AddShift(Shift shift);
+        void AddWorkplace(Workplace workplace);
+        public List<Shift> GetAllShifts();
         public List<Workplace> GetAllWorkplaces();
+        Workplace GetWorkplaceByShift(Shift selectedShift);
+
+        public void SaveFiles();
     }
 }

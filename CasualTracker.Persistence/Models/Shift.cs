@@ -11,8 +11,9 @@ namespace CasualTracker.Persistence.Models
     {
         [PrimaryKey,AutoIncrement]
         public int ID { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly StartTime { get; set; }
+        public TimeOnly EndTime { get; set; }
         public int WorkplaceId { get; set; }
         public int UserID{ get; set; }
 

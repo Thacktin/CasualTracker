@@ -1,0 +1,13 @@
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\bin\Debug\net8.0-windows10.0.19041.0\CustomCalendar.deps.json
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\bin\Debug\net8.0-windows10.0.19041.0\CustomCalendar.dll
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\bin\Debug\net8.0-windows10.0.19041.0\CustomCalendar.pdb
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\CustomCalendar.csproj.AssemblyReference.cache
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\CustomCalendar.GeneratedMSBuildEditorConfig.editorconfig
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\CustomCalendar.AssemblyInfoInputs.cache
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\CustomCalendar.AssemblyInfo.cs
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\CustomCalendar.csproj.CoreCompileInputs.cache
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\XamlC.stamp
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\CustomCalendar.dll
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\refint\CustomCalendar.dll
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\CustomCalendar.pdb
+E:\Beadando\Mobil\CasualTracker\CustomCalendar\obj\Debug\net8.0-windows10.0.19041.0\ref\CustomCalendar.dll
