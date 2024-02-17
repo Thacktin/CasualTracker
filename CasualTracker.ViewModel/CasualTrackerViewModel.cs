@@ -101,6 +101,7 @@ namespace CasualTracker.ViewModel
             this.Model = model;
             Model.ShiftsLoaded += DisplayShiftsList;
             Model.ShiftAdded += DisplayShiftsList;
+
             SelectCommand = new DelegateCommand(Command_Select);
             AddShiftPageCommand = new DelegateCommand(Command_GoToAddShiftPage);
             AddShiftCommand = new DelegateCommand(Command_AddShift);

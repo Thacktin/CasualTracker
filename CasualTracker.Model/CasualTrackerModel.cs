@@ -51,10 +51,10 @@ namespace CasualTracker.Model
         //    return GetCurrentUser().Result == null;
         //}
 
-        public List<Shift> GetUserShifts()
-        {
-            return Persistence.GetAllShifts();
-        }
+        //public List<Shift> GetUserShifts()
+        //{
+        //    return Persistence.GetAllShifts();
+        //}
 
 
 
